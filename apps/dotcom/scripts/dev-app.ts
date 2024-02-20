@@ -5,12 +5,12 @@ import { nicelog } from '../../../scripts/lib/nicelog'
 
 async function main() {
 	await writeEnvFileVars('../dotcom-worker/.dev.vars', {
-		APP_ORIGIN: 'http://localhost:3000',
+		APP_ORIGIN: 'http://100.124.0.17:8287',
 	})
 	if (process.env.VITE_PREVIEW === '1') {
-		await exec('vite', ['preview', '--host', '--port', '3000'])
+		await exec('vite', ['preview', '--host', '--port', '8287'])
 	} else {
-		await exec('vite', ['dev', '--host', '--port', '3000'])
+		await exec('vite', ['dev', '--host', '--port', '8287'])
 	}
 }
 
